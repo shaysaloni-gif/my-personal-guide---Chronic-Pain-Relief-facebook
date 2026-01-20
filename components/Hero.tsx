@@ -4,10 +4,6 @@ import { Play } from 'lucide-react';
 const Hero: React.FC = () => {
   const [activeVideo, setActiveVideo] = useState<string | null>(null);
 
-  const scrollToSuitability = () => {
-    document.getElementById('fit')?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   const testimonials = [
     { 
       id: 'uiLn_YLrKoU', // Keren
@@ -33,25 +29,25 @@ const Hero: React.FC = () => {
   ];
 
   return (
-    <section className="section section--dark hero !pb-8 md:!pb-12" id="top">
+    <section className="section section--dark hero !pb-12 md:!pb-20" id="top">
       <div className="container flex flex-col items-center">
         <div className="logo-wrap !mb-6">
           <img src="https://firebasestorage.googleapis.com/v0/b/studio-2971283909-2f4b3.firebasestorage.app/o/d4d1b2673a36cc47eef7bf407f7e2357.webp?alt=media&token=96cd43eb-ca8f-40c8-b9e3-690fe5c29eed" alt="שי סלוני – לוגו" />
         </div>
         
-        <h1 style={{ fontSize: 'clamp(26px, 5.5vw, 48px)' }} className="!mb-4 text-center leading-tight">
-          נמאס לך מטיפולים שמתמקדים רק בסימפטומים?
+        <h1 style={{ fontSize: 'clamp(26px, 5.5vw, 48px)' }} className="!mb-6 text-center leading-tight max-w-4xl">
+          גם לך נמאס מכל הטיפולים שיוצרים השפעה שחולפת תוך כמה ימים?
           <br />
-          הגעת למקום הנכון.
+          <span className="text-[#E8B86D]">הגעת למקום הנכון.</span>
         </h1>
         
-        <div className="hero-text !mb-6 text-center">
-          <p className="!text-xl md:!text-3xl opacity-90 leading-relaxed">בוא נגלה את <strong>הגורמים האמיתיים</strong> לכאב שלך וניתן לגוף שלך את התנאים לרפא את עצמו.</p>
-        </div>
-        
-        <div className="cta-row mb-10 flex flex-col items-center">
-          <button onClick={scrollToSuitability} className="cta">קבל.י פגישת אבחון ללא עלות!</button>
-          <p style={{ marginTop: '10px', color: 'var(--warm)', fontSize: '14px' }}>*הליווי מותנה בבדיקת התאמה ראשונית</p>
+        <div className="hero-text !mb-12 text-center max-w-3xl">
+          <p className="!text-lg md:!text-2xl opacity-90 leading-relaxed mb-6">
+            אומרים לנו שאם לא ניקח כדורים המצב יחמיר, אנחנו לוקחים כדורים, תוספים, זריקות וכל המצאה כזו או אחרת, והמצב בכל זאת רק מחמיר.
+          </p>
+          <p className="!text-lg md:!text-2xl opacity-90 leading-relaxed">
+            זה לא כי עוד לא הגעתם לטיפול הפלא שיפתור לכם את כל הבעיות, <strong>אלא כי עוד לא מצאתם את הגורמים של הבעיה.</strong>
+          </p>
         </div>
 
         <div className="w-full max-w-6xl mx-auto mt-2">
@@ -71,7 +67,6 @@ const Hero: React.FC = () => {
                     >
                         {/* Video Container */}
                         <div className="aspect-video bg-black relative flex items-center justify-center overflow-hidden">
-                            {/* Prominent Badge */}
                             <div className="absolute top-3 right-3 z-10 bg-[#E8B86D] text-[#1A2B1F] text-[11px] md:text-xs font-bold px-4 py-1.5 rounded-full shadow-lg">
                                 {t.badge}
                             </div>
@@ -104,15 +99,12 @@ const Hero: React.FC = () => {
                         </div>
                         
                         <div className="p-6 text-right flex-grow flex flex-col justify-start gap-1">
-                            {/* Quote line */}
                             <p className="text-[#E8B86D] font-bold text-xl md:text-2xl leading-tight mb-2">
                                 {t.text}
                             </p>
-                            {/* Name line */}
                             <p className="text-white font-bold text-lg leading-snug">
                                 {t.name}
                             </p>
-                            {/* Condition line */}
                             <p className="text-white/70 text-sm md:text-base leading-snug font-medium">
                                 {t.details}
                             </p>
@@ -121,7 +113,6 @@ const Hero: React.FC = () => {
                 ))}
              </div>
         </div>
-
       </div>
     </section>
   );

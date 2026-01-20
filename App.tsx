@@ -11,10 +11,10 @@ const App: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col w-full overflow-x-hidden">
       <Hero />
+      <About />
       <ProblemSection />
       <SolutionSection />
       <Suitability />
-      <About />
       <Testimonials />
       <ContactForm />
       
